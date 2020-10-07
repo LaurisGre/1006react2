@@ -3,21 +3,26 @@ import './App.css';
 
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import NoticeBoard from './pages/NoticeBoard';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = 'login'
+    this.state = {
+      step: '',
+    }
   }
 
   render() {
-    if (this.state === 'token') {
-      return (console.log('token'),
-      <div>asdas</div>)
-    } else if (this.state === 'login') {
-      return <LoginPage />
-    } else if (this.state === 'register') {
-      return <RegisterPage />
-    }
+    return(
+      <Router>
+        <Switch>
+          <Route path='/login' exact component={LoginPage} />
+          <Route path='/register' exact component={RegisterPage} />
+          <Route path='/noticeboard' exact component={NoticeBoard} />
+        </Switch>
+      </Router>
+    )
   }
 }

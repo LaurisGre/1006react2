@@ -1,36 +1,33 @@
 import React from 'react';
 import CreateInput from './CreateInput';
+import { useForm } from 'react-hook-form';
+import CreateFetch from './CreateFetch';
 
-export default class CreateForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: ''};
-        this.credentials = {}
+export default function CreateForm(props) {
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    const {register, handleSubmit, errors} = useForm()
+
+    const onSubmit = (data) => {
+        const bundleData = {
+            credentials: data,
+            method: props.fetchMethod
+        }
+
+        CreateFetch(bundleData);
+        // console.log(data);
     }
-
-    handleChange(event) {
-        // this.setState({value: event.target.value});
-        console.log(this.state);
-        console.log('asdasd');
-    }
-
-    handleSubmit(event) {
-        //fetch
-
-        alert('you submited: ' + this.state.value);
-        event.preventDefault();
-    }
-
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                {this.props.inputs.map(input => 
-                <CreateInput change={this.handleChange} name={input.name} type={input.type} placeholder={input.placeholder} label={input.label}/>
-                )}
-            </form>
-        )
-    }
+   
+    return (
+        <form onSubmit={handleSubmit(onSubmit)}>
+            {props.inputs.map(input => 
+                <CreateInput 
+                    aref={register}
+                    name={input.name} 
+                    type={input.type} 
+                    placeholder={input.placeholder} 
+                    label={input.label}
+                />
+            )}
+        </form>
+    )
 }

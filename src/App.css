@@ -1,33 +1,54 @@
 * {
     padding: 0;
     margin: 0;
+    font-weight: bold;
 }
 
 .formBox {
     background-image:
      linear-gradient(to right bottom, #340151, #491874, #5c2f9a, #6e46c2, #7d5fec);
     color: silver;
-     display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
 
-form input{
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form h3{
+    text-align: center;
+}
+
+.inputBox {
+    flex: 1;
+}
+
+.inputBox input{
     padding: 15px 10px;
     margin: 10px;
-    border-radius: 20px;
+    border-radius: 15px;
     border: none;
     outline: none;
 }
 
 input[type=submit] {
     cursor: pointer;
+    transition: .4s;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
 }
 
-form h3{
-    text-align: center;
+input[type=submit]:hover {
+    background-color: gold;
+    color: indigo;
+    border-color: indigo;
 }
 
 .iconBox {
@@ -37,5 +58,15 @@ form h3{
 svg {
     height: 60px;
     width: 60px;
+    padding: 20px;
     cursor: pointer;
+    opacity: .5;
+    transition: .4s;
+    border-bottom: 3px solid transparent;
+    border-radius: 50%;
+}
+
+svg:hover {
+    opacity: 1;
+    border-color: gold;
 }
