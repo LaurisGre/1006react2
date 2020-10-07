@@ -1,32 +1,36 @@
 import React from 'react';
 import CreateInput from './CreateInput';
 
-export default function CreateForm(props) {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {value: ''};
+export default class CreateForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+        this.credentials = {}
 
-    //     this.handleChange = this.handleChange.bind(this);
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    // }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-    // handleChange(event) {
-    //     this.setState({value: event.target.value});
-    // }
+    handleChange(event) {
+        // this.setState({value: event.target.value});
+        console.log(this.state);
+        console.log('asdasd');
+    }
 
-    // handleSubmit(event) {
-    //     alert('you submited: ' + this.state.value);
-    //     event.preventDefault();
-    // }
+    handleSubmit(event) {
+        //fetch
 
+        alert('you submited: ' + this.state.value);
+        event.preventDefault();
+    }
 
-    return (
-        <form>
-            {props.map(input => 
-            <CreateInput name={input.name} type={input.type} />
-            )}
-            {/* <label for='username'>Username</label>
-            <label for='password'>Password</label> */}
-        </form>
-    )
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                {this.props.inputs.map(input => 
+                <CreateInput change={this.handleChange} name={input.name} type={input.type} placeholder={input.placeholder} label={input.label}/>
+                )}
+            </form>
+        )
+    }
 }
