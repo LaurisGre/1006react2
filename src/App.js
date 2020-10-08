@@ -7,12 +7,6 @@ import NoticeBoard from './pages/NoticeBoard';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export default class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     step: '',
-  //   }
-  // }
 
   render() {
     return(

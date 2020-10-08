@@ -6,13 +6,13 @@ export default function CreateInput(props) {
     return (
         (props.type === 'submit') ? 
         <div className='inputBox'>
-            {/* <Link to={props.label}> */}
+            <Link to={props.label}>
                 <input 
                     name={props.name} 
                     value={props.placeholder} 
                     type={props.type}
                 ></input>
-            {/* </Link> */}
+            </Link>
         </div> :
         <div className='inputBox'>
             <h3>{props.label}</h3>

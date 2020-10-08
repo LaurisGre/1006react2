@@ -37,30 +37,30 @@ export default class NoticeBoard extends React.Component {
 
     render() {
         return(
-            <div className='mainBoard'>
-                <nav>
-                    <div className='navIcon'>
-                        <CreateIcon icon={this.iconList[0]} />
-                        All Posts
+
+                <div className='mainBoard'>
+                    <nav>
+                        <div className='navIcon'>
+                            <CreateIcon icon={this.iconList[0]} />
+                            All Posts
+                        </div>
+                        <div className='navIcon'>
+                            <CreateIcon icon={this.iconList[1]} />
+                            New Post
+                        </div>
+                        <div className='navIcon'>
+                            <CreateIcon icon={this.iconList[2]} />
+                            Log Out
+                        </div>
+                    </nav>
+                    <div>
+
+                            <Route path='/noticeboard/allposts' exact component={AllPostsPage} />
+                            <Route path='/noticeboard/newpost' exact component={NewPostPage} />
+
                     </div>
-                    <div className='navIcon'>
-                        <CreateIcon icon={this.iconList[1]} />
-                        New Post
-                    </div>
-                    <div className='navIcon'>
-                        <CreateIcon icon={this.iconList[2]} />
-                        Log Out
-                    </div>
-                </nav>
-                <div>
-                    <Router>
-                        <Switch>
-                            <Route path='/noticeboard/:allposts' exact component={AllPostsPage} />
-                            <Route path='/noticeboard/:newpost' exact component={NewPostPage} />
-                        </Switch>
-                    </Router>
                 </div>
-            </div>
+
         )
     }
 
