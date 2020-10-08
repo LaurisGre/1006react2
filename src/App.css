@@ -31,7 +31,7 @@ form h3{
 }
 
 .inputBox input{
-    padding: 15px 10px;
+    padding: 10px 5px;
     margin: 10px;
     border-radius: 15px;
     border: none;
@@ -41,14 +41,11 @@ form h3{
 input[type=submit] {
     cursor: pointer;
     transition: .4s;
-    border-bottom: 3px solid transparent;
-    border-top: 3px solid transparent;
 }
 
 input[type=submit]:hover {
     background-color: gold;
     color: indigo;
-    border-color: indigo;
 }
 
 .iconBox {
@@ -56,8 +53,8 @@ input[type=submit]:hover {
 }
 
 svg {
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     padding: 20px;
     cursor: pointer;
     opacity: .5;
@@ -69,4 +66,21 @@ svg {
 svg:hover {
     opacity: 1;
     border-color: gold;
+}
+
+nav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: indigo;
+    padding: 10px;
+    padding-right: 30px;
+}
+
+.navIcon {
+    display: flex;
+    align-items: center;
+    color: white;
 }

@@ -23,7 +23,7 @@ export default class LoginPage extends React.Component {
                 name: 'login',
                 type: 'submit',
                 placeholder: 'PRISIJUNGTI',
-                label: '',
+                label: '/noticeboard',
             },
         ]
 
@@ -42,7 +42,8 @@ export default class LoginPage extends React.Component {
 
         this.fetchMethod = {
             link: 'login',
-            method: 'post',
+            method: 'POST',
+            path: '/noticeboard',
         }
     }
 

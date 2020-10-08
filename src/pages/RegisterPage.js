@@ -35,7 +35,7 @@ export default class LoginPage extends React.Component {
                 name: 'register',
                 type: 'submit',
                 placeholder: 'REGISTRUOTIS',
-                label: '',
+                label: '/login',
             },
         ];
 
@@ -54,7 +54,8 @@ export default class LoginPage extends React.Component {
 
         this.fetchMethod = {
             link: 'register',
-            method: 'post',
+            method: 'POST',
+            path: '/login'
         }
     }
 
@@ -70,3 +71,10 @@ export default class LoginPage extends React.Component {
         )
     }
 }
+
+// const userData = {
+//     name: bilas,
+//     surname: bilas,
+//     email: bilas@bilas.com,
+//     password: bilasbilas,
+// }

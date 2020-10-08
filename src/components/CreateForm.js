@@ -5,16 +5,17 @@ import CreateFetch from './CreateFetch';
 
 export default function CreateForm(props) {
 
-    const {register, handleSubmit, errors} = useForm()
+    const {register, handleSubmit} = useForm()
 
     const onSubmit = (data) => {
+
         const bundleData = {
             credentials: data,
             method: props.fetchMethod
         }
 
         CreateFetch(bundleData);
-        // console.log(data);
+    
     }
    
     return (
