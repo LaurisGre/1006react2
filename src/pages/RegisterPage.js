@@ -53,6 +53,7 @@ export default class LoginPage extends React.Component {
         ];
 
         this.fetchMethod = {
+            type: 'register',
             link: 'register',
             method: 'POST',
             path: '/login'
@@ -77,4 +78,11 @@ export default class LoginPage extends React.Component {
 //     surname: bilas,
 //     email: bilas@bilas.com,
 //     password: bilasbilas,
+// }
+
+// const userData = {
+//     name: labas,
+//     surname: dienas,
+//     email: labas@dienas.com,
+//     password: labasdienas,
 // }

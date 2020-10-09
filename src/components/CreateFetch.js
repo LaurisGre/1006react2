@@ -1,16 +1,41 @@
-// import React from 'react';
-
 export default function CreateFetch(props) {
-    console.log(props)
-    // console.log(props.credentials)
-    // console.log(props.method)
-    // console.log(props.method.link)
-    // console.log(props.method.method)
-    // console.log(props.method.path)
+   
+    if(props.method.type === 'login') {
+        fetch(`http://rest.stecenka.lt/${props.method.link}`, 
+        {
+            headers: {
+                'Content-type': 'application/json',
+            },
+            method: `${props.method.method}`,
+            body: JSON.stringify(props.credentials),
+        }
+    )
+    .then(res => res.json())
+    .then(token => {
+        if (token) {
+            localStorage.setItem('token', JSON.stringify(token));
+        }
+    })
+    }
 
-    const user = JSON.parse(localStorage.getItem('token'));
+    if(props.method.type === 'register') {
+        fetch(`http://rest.stecenka.lt/${props.method.link}`, 
+        {
+            headers: {
+                'Content-type': 'application/json',
+            },
+            method: `${props.method.method}`,
+            body: JSON.stringify(props.credentials),
+        }
+    )
+    .then(res => res.json())
+    }
 
-    fetch(`http://rest.stecenka.lt/${props.method.link}`, 
+    if(props.method.type === 'newPost') {
+
+        const user = JSON.parse(localStorage.getItem('token'));
+
+        fetch(`http://rest.stecenka.lt/${props.method.link}`, 
         {
             headers: {
                 'Content-type': 'application/json',
@@ -20,15 +45,6 @@ export default function CreateFetch(props) {
             body: JSON.stringify(props.credentials),
         }
     )
-    .then(response => {
-        if (response.ok) {
-            console.log('fetchas veikia')
-            return response.json()
-        }
-    })
-    .then(token => {
-        if (token) {
-            localStorage.setItem('token', JSON.stringify(token));
-        }
-    })
+    .then(res => res.json())
+    }
 }
