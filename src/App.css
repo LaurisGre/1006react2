@@ -30,7 +30,7 @@ form h3{
     flex: 1;
 }
 
-.inputBox input{
+.inputBox input, textarea{
     padding: 10px 5px;
     margin: 10px;
     border-radius: 15px;
@@ -70,6 +70,7 @@ svg:hover {
 
 nav {
     height: 100%;
+    width: 200px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -77,6 +78,8 @@ nav {
     background-color: indigo;
     padding: 10px;
     padding-right: 30px;
+    box-sizing: border-box;
+    border-right: 2px solid silver;
 }
 
 .navIcon {
@@ -84,3 +87,85 @@ nav {
     align-items: center;
     color: white;
 }
+
+.allPostPage {
+    margin-left: 200px;
+    min-height: 100vh;
+    background-image:
+     linear-gradient(to right bottom, #340151, #491874, #5c2f9a, #6e46c2, #7d5fec);
+
+     display: flex;
+     flex-wrap: wrap;
+
+}
+
+.newPostPage {
+    margin-left: 200px;
+    height: 100vh;
+
+    background-image:
+     linear-gradient(to right bottom, #340151, #491874, #5c2f9a, #6e46c2, #7d5fec);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.postBox {
+    margin: 20px 10px;
+    padding: 20px;
+
+    background-color: gold;
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px;
+    border-top-left-radius: 0;
+}
+
+.postTitle {
+    padding-bottom: 5px;
+}
+
+.postDetails {
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    border-top: 1px solid black;
+    padding-bottom: 5px;
+}
+
+.postBody {
+    margin-top: 10px;
+}
+
+.postDel {
+    background-color: red;
+    width: 120px;
+    padding: 10px 5px;
+    margin-top: 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.postDel:hover {
+    width: 140px;
+}
+
+/* data.map(post => {
+    <CreatePost 
+        title={post.title}
+        user={post.user_id}
+        date={post.created_at}
+        body={post.body}
+    />
+}) */

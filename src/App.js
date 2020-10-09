@@ -3,8 +3,9 @@ import './App.css';
 
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import NoticeBoard from './pages/NoticeBoard';
+import AllPostsPage from './pages/AllPostsPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NewPostPage from './pages/NewPostPage';
 
 export default class App extends React.Component {
 
@@ -15,7 +16,8 @@ export default class App extends React.Component {
           <Route path='/' exact component={LoginPage} />
           <Route path='/login' exact component={LoginPage} />
           <Route path='/register' exact component={RegisterPage} />
-          <Route path='/noticeboard' exact component={NoticeBoard} />
+          <Route path='/allposts' exact component={AllPostsPage} />
+          <Route path='/newpost' exact component={NewPostPage} />
         </Switch>
       </Router>
     )
